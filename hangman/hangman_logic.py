@@ -1,7 +1,22 @@
+# import os
+# print(os.getcwd())
+import random
+
+f = open('voca.txt','r', encoding='utf-8')
+raw_data = f.read()
+f.close()
+# print(raw_data)
+
+# print(raw_data.split("\n")[-1])
+data_list = raw_data.split("\n")
+data_list = data_list[:-1]
+while True:
+    r_index = random.randrange(0,len(data_list))
+    word = data_list[r_index].replace(u"\xa0",u" ").split(" ")[1]
+    if len(word) <= 6 :break
+
 # A가 영어 단어를 1개 생각한다.
-word = "man"
 word = word.upper()
-print(word)
 
 # 단어의 글자 수만큼 밑줄을 긋는다.
 word_show = "_"*len(word)
